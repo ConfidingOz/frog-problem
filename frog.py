@@ -45,8 +45,8 @@ def frog_jmp(n=100000, spaces=10, seeds=False, everyj=True): #seed for random nu
 				#print(pos)
 				jmp = jmp + 1
 			#print(jmp)
-			if jmp > 7:
-				print(jmp)
+			# if jmp > 7:
+				#print(jmp)
 			pavg = pavg+jmp
 	avg = pavg/n
 	return (avg)
@@ -56,6 +56,6 @@ def frog_jmp(n=100000, spaces=10, seeds=False, everyj=True): #seed for random nu
 
 if __name__ == '__main__':
 
-	print("Pseudo random: ".format(frog_jmp()))
-	print("Slightly more pseudo random: ".format(frog_jmp(seeds="file1.bin",everyj=False)))
-	print("Most random: ".format(frog_jmp(seeds="file2.bin")))
+	print("Pseudo random: {}".format(frog_jmp()))
+	print("Slightly more pseudo random: {}".format(frog_jmp(seeds="file1.bin",everyj=False)))
+	print("Most random: {}".format(frog_jmp(seeds="file2.bin")))
