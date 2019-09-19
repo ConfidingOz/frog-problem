@@ -91,23 +91,39 @@ def coord(frm,to,file,n=1000000):
 if __name__ == '__main__':
 	xes = []
 	yes = []
-	for x in range(100,1000001,100):
-		print(x)
-		xes.append(x)
-		yes.append(frog_jmp(x,10))
-	f= open("sweet","w+")
-	f.write("avg vs iteraions")
-	for m in range(len(xes)):
-		if m != len(xes)-1:
-			f.write(str(xes[m])+',')
-		else:
-			f.write(str(xes[m]))
-	f.write("]\n[")
-	for m in range(len(yes)):
-		if m != len(yes)-1:
-			f.write(str(yes[m])+',')
-		else:
-			f.write(str(yes[m]))
-	f.close()
+	try:
+		for x in range(100,1000001,100):
+			print(x)
+			xes.append(x)
+			yes.append(frog_jmp(x,10))
+		f= open("sweet","w+")
+		f.write("avg vs iteraions")
+		for m in range(len(xes)):
+			if m != len(xes)-1:
+				f.write(str(xes[m])+',')
+			else:
+				f.write(str(xes[m]))
+		f.write("]\n[")
+		for m in range(len(yes)):
+			if m != len(yes)-1:
+				f.write(str(yes[m])+',')
+			else:
+				f.write(str(yes[m]))
+		f.close()
+	except Exception as e:
+		f= open("sweet","w+")
+		f.write("avg vs iteraions")
+		for m in range(len(xes)):
+			if m != len(xes)-1:
+				f.write(str(xes[m])+',')
+			else:
+				f.write(str(xes[m]))
+		f.write("]\n[")
+		for m in range(len(yes)):
+			if m != len(yes)-1:
+				f.write(str(yes[m])+',')
+			else:
+				f.write(str(yes[m]))
+		f.close()
 	plt.plot(xes,yes)
 	plt.show()
